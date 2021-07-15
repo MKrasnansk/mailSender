@@ -5,6 +5,9 @@ import { MailerService } from '@nestjs-modules/mailer';
 @Injectable()
 export class AppService {
   constructor(private readonly mailerService: MailerService) {}
+  getHello(): string {
+    return 'Hello World! Na!!!';
+  }
   async createNewMail(createMailDto: CreateMailDto): Promise<CreateMailDto> {
     const { name, email, subject, message } = createMailDto;
     const newMail: CreateMailDto = await {

@@ -1,11 +1,15 @@
 import { CreateMailDto } from './dto/create-mail.dto';
-import { Body, Controller, Post, Res } from '@nestjs/common';
+import { Body, Controller, Get, Post, Res } from '@nestjs/common';
 import { AppService } from './app.service';
 
-@Controller('api')
+@Controller()
 export class AppController {
   constructor(private readonly appService: AppService) {}
-  @Post('contact')
+  @Get()
+  getHello(): string {
+    return this.appService.getHello();
+  }
+  @Post('api/contact')
   async createMail(
     @Res() res,
     @Body() createMailDto: CreateMailDto,
