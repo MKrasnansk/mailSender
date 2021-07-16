@@ -20,9 +20,6 @@ let AppController = class AppController {
     constructor(appService) {
         this.appService = appService;
     }
-    getHello() {
-        return this.appService.getHello();
-    }
     async createMail(res, createMailDto) {
         const createEmail = await this.appService.createNewMail(createMailDto);
         await res.status(201).json({
@@ -34,12 +31,6 @@ let AppController = class AppController {
         return await this.appService.toSendMail(createEmail);
     }
 };
-__decorate([
-    common_1.Get(),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
-    __metadata("design:returntype", String)
-], AppController.prototype, "getHello", null);
 __decorate([
     common_1.Post('api/contact'),
     __param(0, common_1.Res()),

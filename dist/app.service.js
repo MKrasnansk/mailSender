@@ -16,9 +16,6 @@ let AppService = class AppService {
     constructor(mailerService) {
         this.mailerService = mailerService;
     }
-    getHello() {
-        return 'Hello World! Na!!!';
-    }
     async createNewMail(createMailDto) {
         const { name, email, subject, message } = createMailDto;
         const newMail = await {
