@@ -7,6 +7,7 @@
   "license": "UNLICENSED",
   "scripts": {
     "prebuild": "rimraf dist",
+    "deploy": "heroku builds:create -a mailsender-api-cv",
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
@@ -26,6 +27,7 @@
     "@nestjs/config": "^1.0.0",
     "@nestjs/core": "^7.6.15",
     "@nestjs/platform-express": "^7.6.15",
+    "nest": "^0.1.6",
     "nodemailer": "^6.6.2",
     "pug": "^3.0.2",
     "reflect-metadata": "^0.1.13",
